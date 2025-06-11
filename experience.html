@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experience - Dr. Rethishkumar S.</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .experience-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .experience-container h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .experience-container p {
+      text-align: justify;
+      margin-bottom: 1em;
+    }
+
+    .experience-container ul {
+      padding-left: 20px;
+      list-style-type: disc;
+      text-align: justify;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul id="nav-links">
+      <li><a href="index.html" tabindex="0">Home</a></li>
+      <li><a href="about.html" tabindex="0">About</a></li>
+      <li><a href="research.html" tabindex="0">Research</a></li>
+      <li><a href="experience.html" tabindex="0">Experience</a></li>
+      <li><a href="eContents.html" tabindex="0">eContents</a></li>
+      <li><a href="books.html" tabindex="0">Books</a></li>
+      <li><a href="patents.html" tabindex="0">Patents</a></li>
+      <li><a href="contact.html" tabindex="0">Contact</a></li>
+      <li><a href="gallary.html" tabindex="0">Gallary</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+
+  <main class="experience-container" role="main">
+    <h1>Experience</h1>
+
+    <p><strong>Administrative Officer</strong></p>
+
+    <p>
+      He took Master of Engineering in Computer Science and Engineering from RGCE, Anna University, Chennai. He was awarded Ph.D. in Faculty of Engineering and Technology from School of Computer Sciences, Mahatma Gandhi University in November 2019. His area of research is Security and Privacy in Cloud Computing.
+    </p>
+
+    <p>
+      He was granted 4 and filed 2 Indian patents. He authored 3 books in the field of emerging technologies in computer science, available in the Amazon Kindle e-store. He has published 20 papers, including 2 in Springer, 1 in Elsevier, 1 in IEEE, 7 in Scopus Indexed journals, and the rest in UGC CARE listed peer-reviewed journals.
+    </p>
+
+    <p>
+      He has attended over 30 international conferences and received the Best Paper Award at an international conference in Mangalore (November 2018), organized by the Computer Society of India. He has authored 4 book chapters and delivered over 10 invited talks/lectures.
+    </p>
+
+    <p>
+      The European Science Evaluation Center listed him in the AD Global Scientific Index from 2021 as the Best Scientist in the University in the field of Computer Science.
+    </p>
+
+    <p>
+      Previously, he served as a Lecturer in the Computer Science and Engineering department at the University College of Engineering, Thodupuzha, mentor for the MCA course of IGNOU, and a resource person in the Directorate for Applied Short-term Programmes (DASP) and the Graduate School of MGU.
+    </p>
+
+    <p>He has more than 15 years of experience in Mahatma Gandhi University.</p>
+
+    <h2>His service includes:</h2>
+    <ul>
+      <li>Co-ordinated activities related to NAAC visit, NIRF, THE, QS rankings (01.03.2022 to 15.01.2025)</li>
+      <li>Managed university main website and 52 sub-domain websites (01.07.2019 to 28.02.2022)</li>
+      <li>DDFS Master Trainer</li>
+      <li>Convenor, University Website Monitoring Committee</li>
+      <li>Member, University News Letter Committee</li>
+      <li>Member, Website Policy Framing Committee</li>
+      <li>Admin User - NAD-Digilocker-ABC</li>
+      <li>Co-ordinated Annual Reports and LA Interpellation activities</li>
+      <li>Co-ordinated e-Governance and Placement Cell activities of MGU</li>
+      <li>Assistant Co-ordinator (Technical), Spoken Tutorial Project, IIT Mumbai</li>
+      <li>Responsible for BiMS account, MGU Innovation Foundation (MGUIF), under RUSA 2.0 (2025 onwards)</li>
+      <li>Resource person in DASP and Graduate School of MGU</li>
+    </ul>
+
+    <p>
+      He is a member of several professional bodies such as IEEE, Data Science Foundation, ACM, IEI, Scopus, LinkedIn, ORCID, Mendeley, etc.
+    </p>
+
+    <p><strong>Dr. Rethishkumar S.</strong><br>
+    <a href="mailto:2404@mgu.ac.in">E-Mail</a><br>
+    
+  </main>
+
+  <footer>
+    &copy; 2025 Dr. Rethishkumar S. | <a href="mailto:rethishkumar@gmail.com">Contact</a>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        hamburger.click();
+      }
+    });
+  </script>
+
+</body>
+</html>

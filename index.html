@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. Rethishkumar S. - Portfolio</title>
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. Rethishkumar S. - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+</head>
+<body>
+  <nav>
+   <ul id="nav-links">
+      <li><a href="index.html" tabindex="0">Home</a></li>
+      <li><a href="about.html" tabindex="0">About</a></li>
+      <li><a href="research.html" tabindex="0">Research</a></li>
+      <li><a href="experience.html" tabindex="0">Experience</a></li>
+      <li><a href="eContents.html" tabindex="0">eContents</a></li>
+      <li><a href="books.html" tabindex="0">Books</a></li>
+      <li><a href="patents.html" tabindex="0">Patents</a></li>
+      <li><a href="contact.html" tabindex="0">Contact</a></li>
+      <li><a href="gallary.html" tabindex="0">Gallary</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+
+  <main class="portfolio-container" role="main">
+    <section class="photo-section" aria-label="Profile Photo of Dr. Rethishkumar S.">
+      <img src="Rethish Sir pf.jpg" alt="Dr. Rethishkumar S. Profile Photo" />
+    </section>
+    <section class="description-section">
+      <h1>Dr. Rethishkumar S.</h1>
+      <h2>B.E., M.E., Ph.D.</h2>
+      <p>
+        He took Master of Engineering in Computer Science and Engineering from RGCE, Anna University, Chennai. He was awarded Ph.D. in faculty of Engineering and Technology from School of Computer Sciences, Mahatma Gandhi University in November 2019. His research area is Security and Privacy in Cloud Computing. He holds 4 granted and 2 filed Indian patents, authored 3 books on latest computer science technology available on Amazon Kindle. He has 20 paper publications including Springer, Elsevier, IEEE, and Scopus Indexed journals, plus UGC CARE journals. Attended over 30 international conferences, winning Best Paper Award in Mangalore 2018 by Computer Society of India. Also contributed 4 book chapters and more than 10 invited talks. Recognized by European Science Evaluation Center in AD Global Scientific Index since 2021 as Best Scientist in University for Computer Science. Previously worked as Lecturer at University College of Engineering, Thodupuzha, mentor for IGNOU MCA course, and resource person at MGU’s Directorate for Applied Short-term Programmes. Over 15 years experience at Mahatma Gandhi University.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    
+    &copy;  2025 Dr. Rethishkumar S.  | <a href="mailto:rethishkumar@gmail.com">Contact</a> &nbsp;
+    
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        hamburger.click();
+      }
+    });
+  </script>
+</body>
+</html>

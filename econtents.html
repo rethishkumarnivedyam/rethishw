@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research Publications</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="hamburger" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html" tabindex="0">Home</a></li>
+      <li><a href="about.html" tabindex="0">About</a></li>
+      <li><a href="research.html" tabindex="0">Research</a></li>
+      <li><a href="experience.html" tabindex="0">Experience</a></li>
+      <li><a href="eContents.html" tabindex="0">eContents</a></li>
+      <li><a href="books.html" tabindex="0">Books</a></li>
+      <li><a href="patents.html" tabindex="0">Patents</a></li>
+      <li><a href="contact.html" tabindex="0">Contact</a></li>
+      <li><a href="gallary.html" tabindex="0">Gallary</a></li>
+    </ul>
+  </nav>
+
+  <main class="research-container">
+    <h1>e-contents development & ICT enabled Teaching & Learning.</h1>
+
+    <section class="publications-list">
+      <table border="1" cellpadding="8" cellspacing="0" class="desktop-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Detail</th>
+            <th>Credits</th>
+            <th>National / International</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Name of the Module: AICTE ATAL FDP <br>
+                Category: Development of Innovative Pedagogy <br>
+                Organization for which Developled: Jain University Cochin. <br>
+                Subject: Next Generation Innovation <br>
+                Year:2025
+            </td>
+            <td>4 or greater than 4</td>
+            <td>Other</td>
+            <td><a href="https://mba.jain-online.com/">View</a></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Name of the Module: Memory and Process Management <br>
+                Category: Development of Innovative Pedagogy <br>
+                Organization for which Developled: Graduate School MGU<br>
+                Subject: Hardware Maintenance <br>
+                Year:2024
+            </td>
+            <td>Not Applicable</td>
+            <td>UG</td>
+            <td><a href="https://gs.mgu.ac.in">View</a></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Name of the Module: Cloud computing <br>
+                Category: Development of Innovative Pedagogy <br>
+                Organization for which Developled: Graduate School MGU <br>
+                Subject: Next Generation Innovation <br>
+                Year:2024
+            </td>
+            <td>4 or greater than 4</td>
+            <td>UG</td>
+            <td><a href="https://gs.mgu.ac.in">View</a></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Name of the Module: Computer Hardware Maintenance <br>
+                Category: Design of New Curriculam and Courses <br>
+                Organization for which Developled: Directorate of Applied Short-term programmes <br>
+                Subject: Computer Hardware Maintenance<br>
+                Year:2020
+            </td>
+            <td>4 or greater than 4</td>
+            <td>Other</td>
+            <td><a href="https://dasp.mgu.ac.in/">View</a></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Name of the Module: MCA Data communication and Computer networks (MCS 218 ) of IGNOU <br>
+                Category: E-Content <br>
+                Sub Category: Development of e-content in 4 quadrants for a complete course/e-book <br>
+                Organization for which Developled: IGNOU study centre Kottayam <br>
+                Subject: MCA Data communication and Computer networks (MCS 218 ) of IGNOU<br>
+                Year:2025
+            </td>
+            <td>4 or greater than 4</td>
+            <td>PG</td>
+            <td><a href="https://egyankosh.ac.in">View</a></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Name of the Module: Diploma programme for MGUIF finishing school <br>
+                Category: E-Content <br><br>
+                Sub Category : Development of e-content in 4 quadrants for a complete course/e-book <br>
+                Organization for which Developled: MGU Innovation Foundation <br>
+                Subject: Cyber Security and Ethical Hacking <br>
+                Year:2025
+            </td>
+            <td>4 or greater than 4</td>
+            <td>UG</td>
+            <td><a href="https://mguif.com/">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="mobile-cards"></div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Dr. Rethishkumar S. | <a href="mailto:rethishkumar@gmail.com">Contact</a>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('nav ul');
+    const mobileCardsContainer = document.querySelector('.mobile-cards');
+
+    function toggleMenu() {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('open');
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    function extractTableData() {
+      const rows = document.querySelectorAll('.desktop-table tbody tr');
+      const data = [];
+      rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        const detail = cells[1].innerHTML.replace(/<br\s*\/?>/gi, '\n').trim();
+        data.push({
+          id: cells[0].textContent.trim(),
+          detail,
+          credits: cells[2].textContent.trim(),
+          level: cells[3].textContent.trim(),
+          link: cells[4].querySelector('a')?.href || ''
+        });
+      });
+      return data;
+    }
+
+    function renderMobileCards() {
+      const data = extractTableData();
+      mobileCardsContainer.innerHTML = '';
+      data.forEach(item => {
+        const card = document.createElement('div');
+        card.classList.add('publication-card');
+        card.innerHTML = `
+          <div><strong>#</strong> ${item.id}</div>
+          <div><strong>Detail:</strong><br>${item.detail.replace(/\n/g, '<br>')}</div>
+          <div><strong>Credits:</strong> ${item.credits}</div>
+          <div><strong>Level:</strong> ${item.level}</div>
+          <div><strong>Link:</strong> <a href="${item.link}" target="_blank">View</a></div>
+        `;
+        mobileCardsContainer.appendChild(card);
+      });
+    }
+
+    function renderAllMobileCards() {
+      if (window.innerWidth <= 768) {
+        renderMobileCards();
+      } else {
+        mobileCardsContainer.innerHTML = '';
+      }
+    }
+
+    renderAllMobileCards();
+    window.addEventListener('resize', renderAllMobileCards);
+  </script>
+
+</body>
+</html>

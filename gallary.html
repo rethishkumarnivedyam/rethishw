@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav>
+    <ul id="nav-links">
+      <li><a href="index.html" tabindex="0">Home</a></li>
+      <li><a href="about.html" tabindex="0">About</a></li>
+      <li><a href="research.html" tabindex="0">Research</a></li>
+      <li><a href="experience.html" tabindex="0">Experience</a></li>
+      <li><a href="eContents.html" tabindex="0">eContents</a></li>
+      <li><a href="books.html" tabindex="0">Books</a></li>
+      <li><a href="patents.html" tabindex="0">Patents</a></li>
+      <li><a href="contact.html" tabindex="0">Contact</a></li>
+      <li><a href="gallary.html" tabindex="0">Gallary</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+  </nav>
+
+  <main class="gallery-container">
+    <h1>Photo Gallery</h1>
+    <div class="photo-grid">
+      <div class="photo-card"><img src="photos/vnv.png" alt="Gallery Image 1" onclick="openLightbox(this)"></div>
+      <div class="photo-card"><img src="images/gallery2.jpg" alt="Gallery Image 2" onclick="openLightbox(this)"></div>
+      <div class="photo-card"><img src="images/gallery3.jpg" alt="Gallery Image 3" onclick="openLightbox(this)"></div>
+      <div class="photo-card"><img src="images/gallery4.jpg" alt="Gallery Image 4" onclick="openLightbox(this)"></div>
+      <div class="photo-card"><img src="images/gallery5.jpg" alt="Gallery Image 5" onclick="openLightbox(this)"></div>
+      <div class="photo-card"><img src="images/gallery6.jpg" alt="Gallery Image 6" onclick="openLightbox(this)"></div>
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" alt="Full Image">
+  </div>
+
+  <footer>
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navList = document.querySelector("nav ul");
+      const burger = document.querySelector(".hamburger");
+      navList.classList.toggle("open");
+      burger.classList.toggle("active");
+    }
+
+    function openLightbox(imgElement) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = imgElement.src;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
