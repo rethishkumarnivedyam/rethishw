@@ -233,6 +233,7 @@ nav ul li a[aria-current="page"] {
   color: white;
 }
 
+
 @media (max-width: 600px) {
   .about-table,
   .about-table thead,
@@ -262,6 +263,20 @@ nav ul li a[aria-current="page"] {
     margin-bottom: 5px;
     color: #333;
   }
+  .about-table thead th {
+    font-weight: bold;
+    background-color: #f0f0f0; /* Optional: adds contrast */
+    text-align: left; /* Optional: improves readability */
+    padding: 10px;
+  }
+
+  .about-table td.headx {
+    font-weight: bold;
+    font-style: italic;
+    color: #b40008;
+  }
+
+  
 }
 
 /* Research Page Styles */
