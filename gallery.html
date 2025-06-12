@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photo Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+   <nav>
+    <ul id="nav-links">
+      <li><a href="index.html" tabindex="0">Home</a></li>
+      <li><a href="about.html" tabindex="0">About</a></li>
+      <li><a href="research.html" tabindex="0">Research</a></li>
+      <li><a href="experience.html" tabindex="0">Experience</a></li>
+      <li><a href="econtents.html" tabindex="0">eContents</a></li>
+      <li><a href="books.html" tabindex="0">Books</a></li>
+      <li><a href="consultation.html" tabindex="0">Consultation</a></li>
+      <li><a href="patents.html" tabindex="0">Patents</a></li>
+      <li><a href="awards.html" tabindex="0">Awards</a></li>
+      <li><a href="lectures.html" tabindex="0">Lectures</a></li>
+      <li><a href="gallery.html" tabindex="0">Gallery</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+  <div class="gallery-container">
+    <h1>Gallery</h1>
+    <div class="photo-grid">
+      <div class="photo-card"><img src="images/naac3.jpeg" alt="naac3" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/naac.jpeg" alt="naac" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/naac2.jpeg" alt="naac2" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/naac4.jpeg" alt="naac4" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/wthvcsbu.jpeg" alt="wthvcsbu" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/patent.jpeg" alt="patent" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/book.jfif" alt="book" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/bookrel.jpeg" alt="bookrel" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/conf.jpeg" alt="conf" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/cta.jpeg" alt="cta" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/drgcmp.jpeg" alt="drgcmp" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/megrd.jpeg" alt="megrd" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/mlamtw.jpeg" alt="mlamtw" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/mpktym.jpeg" alt="mpktym" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/nss.jpeg" alt="nss" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/nssawrd.jpeg" alt="nssawrd" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/nvjvn.jpeg" alt="nvjvn" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/od.jpeg" alt="odj" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/patentpotr.jpeg" alt="patentpotr" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/phdemplyu.jpeg" alt="phdemplyu" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/sdrnshiva.jpeg" alt="sdrmshiva" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/statueing.jpeg" alt="statueing" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/vidyjti.jpeg" alt="vidyjtj" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/vjksndoff.jpeg" alt="vjksndoff" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/vnv.png" alt="vnv" onclick="openLightbox(this.src)" /></div>
+      <div class="photo-card"><img src="images/vnsir.jpeg" alt="vnsir" onclick="openLightbox(this.src)" /></div>
+      
+    </div>
+  </div>
+
+  <!-- Lightbox Overlay -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-image" src="" alt="Full view" />
+  </div>
+
+
+  <footer>
+    
+    &copy;  2025 Dr. Rethishkumar S.  | <a href="mailto:rethishkumar@gmail.com">Contact</a> &nbsp;
+    
+  </footer>
+
+
+  <!-- Lightbox Script -->
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+      lightboxImage.src = src;
+      lightbox.style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    document.getElementById("lightbox").addEventListener("click", function (e) {
+      if (e.target.id === "lightbox" || e.target.classList.contains("lightbox-close")) {
+        closeLightbox();
+      }
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        hamburger.click();
+      }
+    });
+
+  </script>
+
+</body>
+</html>
