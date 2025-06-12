@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invited Lectures & Presentations</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="hamburger" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html" tabindex="0">Home</a></li>
+      <li><a href="about.html" tabindex="0">About</a></li>
+      <li><a href="research.html" tabindex="0">Research</a></li>
+      <li><a href="experience.html" tabindex="0">Experience</a></li>
+      <li><a href="econtents.html" tabindex="0">eContents</a></li>
+      <li><a href="books.html" tabindex="0">Books</a></li>
+      <li><a href="patents.html" tabindex="0">Patents</a></li>
+      <li><a href="awards.html" tabindex="0">Awards</a></li>
+      <li><a href="lectures.html" tabindex="0">Lectures</a></li>
+      <li><a href="contact.html" tabindex="0">Contact</a></li>
+      <li><a href="gallery.html" tabindex="0">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <main class="research-container">
+    <h1>Invited Lectures / Resource Person / Paper Presentations</h1>
+
+    <section class="publications-list">
+      <table border="1" cellpadding="8" cellspacing="0" class="desktop-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Lecture / Paper Title</th>
+            <th>Event Details</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>GENE MESH: A web based exploratory analysis of bio-medicinal data through microarray fusion of grid and bio-informatics<br>Date: 2015-09-15<br>Duration: 30 mins</td>
+            <td>SUDCON: Sustainable Development Congress organized by Govt of Kerala (State/University)</td>
+            <td>Paper Presented</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Anti Drug Campaign : Responsibilities of Statutory bodies<br>Date: 2025-04-12<br>Duration: 90 mins</td>
+            <td>Nair Service Society No 311 Pampady (State/University)</td>
+            <td>Invited Lecture</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Technical speech<br>Date: 2020-01-15<br>Duration: 60 mins</td>
+            <td>Vettikkavu Bhagavathy temple, Velloor (State/University)</td>
+            <td>Invited Lecture</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Technical speech<br>Date: 2022-09-20<br>Duration: 60 mins</td>
+            <td>Poorv Sainik Seeva Parishat, Pampady (State/University)</td>
+            <td>Invited Lecture</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Technology Transfer in new era<br>Date: 2023-09-15<br>Duration: 60 mins</td>
+            <td>Mannam Memorial English Medium School, Velloor (State/University)</td>
+            <td>Invited Lecture</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Technology Trends in Computer Science<br>Date: 2024-08-16<br>Duration: 120 mins</td>
+            <td>Graduate School of MGU (State/University)</td>
+            <td>Resource Person</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Guaranteed QoS while allocation of VMs in Cloud by mitigating Co-Resident DDoS attack<br>Date: 2021-02-19<br>Duration: 30 mins</td>
+            <td>National Conference on Deep Learning & Applications (Deep.Learn 2021), University of Kerala (National)</td>
+            <td>Paper Presented</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Latest inventions in computer science<br>Date: 2023-05-20<br>Duration: 60 mins</td>
+            <td>Navajeevan Public Library, Paramattom (State/University)</td>
+            <td>Invited Lecture</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Two player security game model for preventing co-resident DoS threat in cloud environment<br>Date: 2018-10-15<br>Duration: 30 mins</td>
+            <td>International Conference on Advanced IT, Engineering & Management, St. Aloysius College, Mangalore (International - within country)</td>
+            <td>Paper Presented</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="mobile-cards"></div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Dr. Rethishkumar S. | <a href="mailto:rethishkumar@gmail.com">Contact</a>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('nav ul');
+    const mobileCardsContainer = document.querySelector('.mobile-cards');
+
+    function toggleMenu() {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('open');
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    function extractTableData() {
+      const rows = document.querySelectorAll('.desktop-table tbody tr');
+      const data = [];
+      rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        data.push({
+          id: cells[0].textContent.trim(),
+          title: cells[1].innerHTML.replace(/<br\s*\/?>/gi, '\n').trim(),
+          event: cells[2].textContent.trim(),
+          type: cells[3].textContent.trim(),
+        });
+      });
+      return data;
+    }
+
+    function renderMobileCards() {
+      const data = extractTableData();
+      mobileCardsContainer.innerHTML = '';
+      data.forEach(item => {
+        const card = document.createElement('div');
+        card.classList.add('publication-card');
+        card.innerHTML = `
+          <div><strong>#</strong> ${item.id}</div>
+          <div><strong>Title:</strong><br>${item.title.replace(/\n/g, '<br>')}</div>
+          <div><strong>Event:</strong> ${item.event}</div>
+          <div><strong>Type:</strong> ${item.type}</div>
+        `;
+        mobileCardsContainer.appendChild(card);
+      });
+    }
+
+    function renderAllMobileCards() {
+      if (window.innerWidth <= 768) {
+        renderMobileCards();
+      } else {
+        mobileCardsContainer.innerHTML = '';
+      }
+    }
+
+    renderAllMobileCards();
+    window.addEventListener('resize', renderAllMobileCards);
+  </script>
+
+</body>
+</html>
