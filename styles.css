@@ -378,10 +378,13 @@ footer a:focus {
     border-radius: 0 0 8px 8px;
     z-index: 99;
     transition: max-height 0.3s ease;
+    
+  overflow-y: auto;
   }
 
   nav ul.open {
-    max-height: 400px;
+    max-height: none;
+    overflow-y: auto;
   }
 
   nav ul li {
