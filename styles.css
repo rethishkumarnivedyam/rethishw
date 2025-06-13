@@ -48,7 +48,7 @@ nav ul li a {
   color: #ffffff;
   font-weight: 600;
   font-size: 1rem; /* smaller size */
-  padding: 6px 10px; /* reduced padding */
+  padding: 6px 7px; /* reduced padding */
   border-radius: 4px;
   font-variant: small-caps;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -415,8 +415,8 @@ footer a:focus {
 
   nav ul li a {
     display: block;
-    padding: 14px 20px;
-    font-size: 1.2rem;
+    padding: 15px 20px;
+    font-size: 1rem;
     text-align: justify;
   }
 
