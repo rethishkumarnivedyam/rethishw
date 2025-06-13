@@ -706,3 +706,12 @@ footer a:focus {
   font-weight: bold;
   z-index: 10001;
 }
+.headx td button {
+  background-color: #b40008;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
